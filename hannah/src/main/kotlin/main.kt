@@ -1,4 +1,6 @@
 fun main() {
-    testForStackMadeByMe()
-    testForStackByJava()
+    // testForStackMadeByMe()
+    // testForStackByJava()
+
+    testForQueueMadeByMe()
 }
