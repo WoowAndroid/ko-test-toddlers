@@ -12,5 +12,6 @@ fun main() {
     // testForQueueByJava()
 
     // Deque
-    testForDequeMadeByMe()
+    // testForDequeMadeByMe()
+    testForDequeByJava()
 }
