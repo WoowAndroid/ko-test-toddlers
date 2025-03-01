@@ -1,3 +1,5 @@
+package queue
+
 class Queue<T>(private val capacity: Int? = null) {
     private val elements: ArrayDeque<T> = initializeElements()
     private var head = 0
