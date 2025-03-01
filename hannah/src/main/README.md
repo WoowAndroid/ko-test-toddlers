@@ -28,3 +28,42 @@
 - 웹 브라우저 뒤로 가기
 - 역순 문자열 만들기
 - 재귀적 알고리즘(ex: Factorial, DFS)
+
+<br>
+
+## 큐(Queue)
+### 개념
+- 입력 받은 값을 줄 세워서 저장
+- 먼저 넣은 데이터가 먼저 나옴
+  ➡️ **FIFO(First In First Out)** 형식의 자료구조
+- head와 tail을 가지고 있음
+
+### 시간 복잡도
+- **삽입**: O(1)
+- **삭제**: O(1)
+- **`front`와 `(tail - 1)`의 원소 조회**: O(1)
+  - `front`와 `tail - 1`이 아닌 나머지 원소들은 확인/변경이 원칙적으로 불가능
+
+### 용어
+|  |    예외     |   값 반환   |
+|:--:|:---------:|:--------:
+| 삽입 |  add(e)   | offer(e) |
+| 삭제 | remove()  |  poll()  |
+| 조회 | element() |  peek()  |
+
+**삽입 (위치: `tail - 1`)**
+- **add**: 큐가 꽉 찬 경우 IllegalStateException 던짐
+- **offer**: 큐가 꽉 찬 경우 false 반환
+
+**삭제 (위치: `head`)**
+- **remove**: queue가 비어있는 경우 NoSuchElementException 던짐
+- **poll**: queue가 비어있는 경우 null 반환
+
+**조회 (위치: `head`)**
+- **element**: queue가 비어있는 경우 NoSuchElementException 던짐
+- **peek**: queue가 비어있는 경우 null 던짐
+
+### 활용 예시
+- 줄을 서서 기다려야 하는 모든 행동 (ex: 은행 업무, 놀이동산 줄)
+- 프로세스 관리
+- 너비 우선 탐색 (Breadth-First Search)
