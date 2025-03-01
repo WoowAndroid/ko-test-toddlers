@@ -1,3 +1,4 @@
 fun main() {
     testForStackMadeByMe()
+    testForStackByJava()
 }
