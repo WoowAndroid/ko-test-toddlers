@@ -61,9 +61,63 @@
 
 **조회 (위치: `head`)**
 - **element**: queue가 비어있는 경우 NoSuchElementException 던짐
-- **peek**: queue가 비어있는 경우 null 던짐
+- **peek**: queue가 비어있는 경우 null 반환
 
 ### 활용 예시
 - 줄을 서서 기다려야 하는 모든 행동 (ex: 은행 업무, 놀이동산 줄)
 - 프로세스 관리
 - 너비 우선 탐색 (Breadth-First Search)
+
+<br>
+
+## 덱(Deque)
+### 개념
+- 양쪽 끝에서 삽입, 삭제 가능
+- 배열 또는 연결 리스트로 구현 가능 -> 배열로 구현하는 게 더 쉬움
+- head(가장 앞에 있는 원소의 인덱스)와 tail(가장 뒤에 있는 원소의 인덱스 + 1)을 가지고 있음
+- head와 tail의 초기값은 0이 아닌 Max
+- 
+### 시간 복잡도
+- 삽입: O(1)
+- 삭제: O(1)
+- 제일 앞/뒤의 원소 조회: O(1)
+  - 제일 앞/뒤가 아닌 나머지 원소들의 확인/변경이 원칙적으로 불가능
+
+### 용어
+
+**`First Element(Head)`**
+
+| |      예외       |     값 반환      |
+|:-------------------:|:-------------:|:-------------:
+|         삽입          |  addFirst(e)  | offerFirst(e) |
+|         삭제          | removeFirst() |  pollFirst()  |
+|         조회          |  getFirst()   |  peekFirst()  |
+
+**`Second Element(Tail)`**
+
+|  |      예외      |     값 반환     |
+|:--------------------:|:------------:|:------------:
+|          삽입          |  addLast(e)  | offerLast(e) |
+|          삭제          | removeLast() |  pollLast()  |
+|          조회          |  getLast()   |  peekLast()  |
+
+**삽입**
+- **addFirst**, **addLast**: deque이 꽉 찬 경우 IllegalStateException 던짐
+- **offerFirst**, **offerLast**: 삽입이 가능한 경우 true 반환, deque이 꽉 찬 경우 false 반환, 
+
+**삭제**
+- **removeFirst**: head 값 반환, deque이 비어있는 경우 NoSuchElementException 던짐
+- **removeLast**: tail 값 반환, deque이 비어있는 경우 NoSuchElementException 던짐
+
+- **pollFirst**: head 값 반환, deque이 비어있는 경우 null 반환
+- **pollLast**: tail 값 반환, deque이 비어있는 경우 null 반환
+
+
+**조회**
+- **getFirst**: head 값 반환, deque이 비어있는 경우 NoSuchElementException 던짐
+- **getLast**: tail 값 반환, deque이 비어있는 경우 NoSuchElementException 던짐
+
+- **peekFirst**: head 값 반환, deque이 비어있는 경우 null 반환
+- **peekLast**: tail 값 반환, deque이 비어있는 경우 null 반환
+
+<br>
