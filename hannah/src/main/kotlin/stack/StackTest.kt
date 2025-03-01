@@ -1,3 +1,5 @@
+package stack
+
 fun testForStackMadeByMe() {
     val stack = Stack<Int>()
 

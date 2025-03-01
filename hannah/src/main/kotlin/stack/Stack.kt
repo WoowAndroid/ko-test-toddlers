@@ -1,3 +1,5 @@
+package stack
+
 import java.util.EmptyStackException
 
 class Stack<T> {
