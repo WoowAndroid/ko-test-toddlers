@@ -1,6 +1,9 @@
 package datastructure
 
 interface Stack<T: Any?> {
+    val top: Int
+    val size: Int
+
     fun push(item: T)
 
     fun pop(): T?
@@ -8,16 +11,17 @@ interface Stack<T: Any?> {
     fun peek(): T?
 
     fun isEmpty(): Boolean
-
 }
 
-class StackUsingTop<T : Any?>(size: Int) : Stack<T> {
-    private var top: Int = -1
-    private val _stack: Array<T?> = Array<Any?>(size) {null} as Array<T?>
-    private val maxSize = size
+class StackUsingTop<T : Any?>(private val maxSize: Int) : Stack<T> {
+    override var top: Int = -1
+        private set
+    override val size: Int
+        get() = _stack.size
+    private val _stack: Array<T?> = Array<Any?>(maxSize) {null} as Array<T?>
 
     init {
-        require(size > 0)
+        require(maxSize > 0) { "스택의 크기는 0보다 커야합니다." }
     }
 
     override fun push(item: T) {
