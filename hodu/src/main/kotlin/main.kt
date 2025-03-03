@@ -1,4 +1,5 @@
 import datastructure.*
+import solve.boj.Boj2075Solution
 
 fun main() {
     println("hello walnut")
@@ -8,8 +9,9 @@ fun main() {
 //    testMaxHeap()
 //    val solution9093 = Boj9093Solution()
 //    solution9093.runTestCases()
-    testMaxHeapUsingMutableList()
-
+//    testMaxHeapUsingMutableList()
+    val solution2075 = Boj2075Solution()
+    solution2075.solve()
 }
 
 private fun testQueue() {
