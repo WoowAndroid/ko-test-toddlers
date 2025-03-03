@@ -3,9 +3,9 @@ package datastructure
 interface Heap {
     val endNodeIndex: Int
 
-    fun insert(item: Int)
+    fun insert(item: Long)
 
-    fun delete(): Int?
+    fun delete(): Long
 
     fun isFull(): Boolean
 
@@ -21,7 +21,7 @@ class MaxHeap(private val maxSize: Int) : Heap {
     override var endNodeIndex: Int = DEFAULT_INDEX
         private set
     val size: Int get() = endNodeIndex
-    val heap: Array<Int?> = Array(maxSize + 1) {null}
+    val heap: Array<Long> = Array(maxSize + 1) {0L}
 
     init {
         require(maxSize > 0) { "힙의 크기는 0보다 커야합니다." }
@@ -29,7 +29,7 @@ class MaxHeap(private val maxSize: Int) : Heap {
 
     // 노드 개수가 endNodeIndex인 힙에 item 추가
     // 맨 끝 노드부터 시작하여, parent와 비교하며 삽입 위치를 찾고 item을 추가한다.
-    override fun insert(item: Int) {
+    override fun insert(item: Long) {
         if (isFull()) {
             println("힙이 꽉 찼습니다. 현재 크기: $size, 최대 크기: $maxSize")
             return
@@ -47,10 +47,10 @@ class MaxHeap(private val maxSize: Int) : Heap {
 
     // 루트 노드의 아이템을 삭제하고 반환
     // 힙을 순서에 맞게 재구성한다: 맨 끝 노드를 루트로 설정하여, 자식과 비교를 수행한다.
-    override fun delete(): Int? {
+    override fun delete(): Long {
         if (isEmpty()) {
-            println("힙이 비어있습니다. null을 반환합니다.")
-            return null
+            println("힙이 비어있습니다.")
+            return 0L
         }
         val rootItem = heap[ROOT_NODE_INDEX]  // 반환할 루트 노드 아이템
         val endNode = heap[endNodeIndex--]  // 맨 끝 노드, 루트에 삽입될 예정
@@ -88,13 +88,13 @@ class MinHeap(private val maxSize: Int) : Heap {
     override var endNodeIndex: Int = DEFAULT_INDEX
         private set
     val size: Int get() = endNodeIndex
-    val heap: Array<Int?> = Array(maxSize + 1) {null}
+    val heap: Array<Long> = Array(maxSize + 1) {0L}
 
     init {
         require(maxSize > 0) { "힙의 크기는 0보다 커야합니다." }
     }
 
-    override fun insert(item: Int) {
+    override fun insert(item: Long) {
         if (isFull()) {
             println("힙이 꽉 찼습니다. 현재 크기: $size, 최대 크기: $maxSize")
             return
@@ -112,10 +112,10 @@ class MinHeap(private val maxSize: Int) : Heap {
 
     // 루트 노드의 아이템을 삭제하고 반환
     // 힙을 순서에 맞게 재구성한다: 맨 끝 노드를 루트로 설정하여, 자식과 비교를 수행한다.
-    override fun delete(): Int? {
+    override fun delete(): Long {
         if (isEmpty()) {
-            println("힙이 비어있습니다. null을 반환합니다.")
-            return null
+            println("힙이 비어있습니다.")
+            return 0L
         }
         val rootItem = heap[ROOT_NODE_INDEX]  // 반환할 루트 노드 아이템
         val endNode = heap[endNodeIndex--]  // 맨 끝 노드, 루트에 삽입될 예정
