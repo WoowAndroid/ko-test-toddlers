@@ -19,4 +19,6 @@ fun main() {
     // Heap
     maxHeapTestForMadeByMe()
     minHeapTestForMadeByMe()
+    maxHeapTestForByJava()
+    minHeapTestForByJava()
 }
