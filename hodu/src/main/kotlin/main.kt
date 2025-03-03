@@ -1,4 +1,5 @@
 import datastructure.*
+import solve.boj.Boj9093Solution
 import solve.programmers.ProcessSolution
 import kotlin.collections.ArrayDeque
 
@@ -8,8 +9,8 @@ fun main() {
 //    testCircularQueue()
 //    testMinHeap()
 //    testMaxHeap()
-    val processSolution = ProcessSolution()
-    processSolution.runTestCases()
+    val solution9093 = Boj9093Solution()
+    solution9093.runTestCases()
 }
 
 private fun testQueue() {
