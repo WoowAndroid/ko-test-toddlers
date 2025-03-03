@@ -1,4 +1,5 @@
 import deque.*
+import heap.*
 import stack.*
 import queue.*
 
@@ -13,5 +14,9 @@ fun main() {
 
     // Deque
     // testForDequeMadeByMe()
-    testForDequeByJava()
+    // testForDequeByJava()
+
+    // Heap
+    maxHeapTestForMadeByMe()
+    minHeapTestForMadeByMe()
 }
