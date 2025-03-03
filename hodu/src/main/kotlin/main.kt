@@ -4,8 +4,9 @@ fun main() {
     println("hello walnut")
 //    testStack()
 //    testQueue()
-    testMinHeap()
-    testMaxHeap()
+    testCircularQueue()
+//    testMinHeap()
+//    testMaxHeap()
 }
 
 private fun testStack() {
@@ -38,19 +39,69 @@ private fun testQueue() {
 
     println("dequeue: ${queue.dequeue()}")
     println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
-
+    println("dequeue: ${queue.dequeue()}")
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    println("dequeue: ${queue.dequeue()}")
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    println("dequeue: ${queue.dequeue()}")
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
     println("dequeue: ${queue.dequeue()}")
     println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
 
+    queue.enqueue(1)
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    queue.enqueue(2)
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    queue.enqueue(7)
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    queue.enqueue(6)
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
     println("dequeue: ${queue.dequeue()}")
     println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    println("dequeue: ${queue.dequeue()}")
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    queue.enqueue(10)
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+}
+
+private fun testCircularQueue() {
+    val queue: Queue<Int> = CircularQueue(4)
+    queue.enqueue(5)
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    queue.enqueue(6)
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    queue.enqueue(7)
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    queue.enqueue(8)
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    queue.enqueue(9)
+    println("peeked data: ${queue.peek()}")
 
     println("dequeue: ${queue.dequeue()}")
     println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
-
+    println("dequeue: ${queue.dequeue()}")
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    println("dequeue: ${queue.dequeue()}")
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    println("dequeue: ${queue.dequeue()}")
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
     println("dequeue: ${queue.dequeue()}")
     println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
 
+    queue.enqueue(1)
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    queue.enqueue(2)
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    queue.enqueue(7)
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    queue.enqueue(6)
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    println("dequeue: ${queue.dequeue()}")
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    println("dequeue: ${queue.dequeue()}")
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
+    queue.enqueue(10)
+    println("size: ${queue.size}, front: ${queue.front}, rear: ${queue.rear}")
 }
 
 private fun testMinHeap() {
