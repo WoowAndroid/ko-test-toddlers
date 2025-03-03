@@ -1,12 +1,16 @@
 import datastructure.*
+import solve.programmers.ProcessSolution
+import kotlin.collections.ArrayDeque
 
 fun main() {
     println("hello walnut")
 //    testStack()
 //    testQueue()
-    testCircularQueue()
+//    testCircularQueue()
 //    testMinHeap()
 //    testMaxHeap()
+    val processSolution = ProcessSolution()
+    processSolution.runTestCases()
 }
 
 private fun testStack() {
