@@ -156,3 +156,33 @@ private operator fun Int?.compareTo(item: Int?): Int {
         else -> this.compareTo(item)
     }
 }
+
+class MaxHeapUsingMutableList() {
+    val heap: MutableList<Long> = mutableListOf(0L)
+
+    fun insert(item: Long) {
+        var insertIndex = heap.size
+        heap.add(item)
+        while(insertIndex > 1 && heap[insertIndex/2] < heap[insertIndex]) {
+            heap[insertIndex] = heap[insertIndex/2].also { heap[insertIndex/2] = heap[insertIndex] }
+            insertIndex /= 2
+        }
+    }
+
+    fun delete(): Long {
+        if (heap.size == 1) return 0L
+        val rootNode = heap.removeAt(1)
+        if (heap.size == 1) return rootNode
+        heap.add(1, heap.removeLast())
+        var parent = 1
+        var child = 2
+        while(child < heap.size - 1) {
+            if(child < heap.size - 1 && heap[child] < heap[child + 1]) child++
+            if(heap[parent] > heap[child]) break
+            heap[parent] = heap[child].also { heap[child] = heap[parent] }
+            parent = child
+            child = parent * 2
+        }
+        return rootNode
+    }
+}

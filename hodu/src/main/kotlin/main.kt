@@ -1,7 +1,4 @@
 import datastructure.*
-import solve.boj.Boj9093Solution
-import solve.programmers.ProcessSolution
-import kotlin.collections.ArrayDeque
 
 fun main() {
     println("hello walnut")
@@ -9,8 +6,10 @@ fun main() {
 //    testCircularQueue()
 //    testMinHeap()
 //    testMaxHeap()
-    val solution9093 = Boj9093Solution()
-    solution9093.runTestCases()
+//    val solution9093 = Boj9093Solution()
+//    solution9093.runTestCases()
+    testMaxHeapUsingMutableList()
+
 }
 
 private fun testQueue() {
@@ -170,3 +169,44 @@ private fun testMaxHeap() {
     }
     println()
 }
+
+private fun testMaxHeapUsingMutableList() {
+    val maxHeap = MaxHeapUsingMutableList()
+    println("--- [최대 힙 테스트] ---")
+    println("delete: ${maxHeap.delete()}")
+
+    maxHeap.insert(3)
+    maxHeap.insert(5)
+    maxHeap.insert(10)
+    maxHeap.insert(2)
+    maxHeap.insert(9)
+    println("마지막 노드 번호: ${maxHeap.heap.size}")
+    println(maxHeap.heap)
+    println()
+
+    maxHeap.insert(15)
+    maxHeap.insert(2)
+    maxHeap.insert(-3)
+    maxHeap.insert(-6)
+    maxHeap.insert(0)
+    maxHeap.insert(100)
+    println("마지막 노드 번호: ${maxHeap.heap.size}")
+    println(maxHeap.heap)
+    println()
+
+    println("delete: ${maxHeap.delete()}")
+    println(maxHeap.heap)
+    println()
+
+    println("delete: ${maxHeap.delete()}")
+    println(maxHeap.heap)
+    println()
+
+    println("delete: ${maxHeap.delete()}")
+    println(maxHeap.heap)
+    println()
+
+    println("마지막 노드 번호: ${maxHeap.heap.size}")
+    println()
+}
+
