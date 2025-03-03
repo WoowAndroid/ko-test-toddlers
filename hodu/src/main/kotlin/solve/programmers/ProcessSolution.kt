@@ -9,6 +9,7 @@ class ProcessSolution {
             intArrayOf(1, 1, 1, 1, 1, 2) to 4,
             intArrayOf(1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0) to 9,
         )
+    private val answers: List<Int> = listOf(1, 5, 2, 6, 10)
 
     fun solution(priorities: IntArray, location: Int): Int {
         var answer = 0
@@ -36,7 +37,8 @@ class ProcessSolution {
         testCases.forEachIndexed { index, testCase ->
             println("[test $index]")
             val answer = solution(testCase.first, testCase.second)
-            println("case: ${testCase.first.contentToString()}, ${testCase.second} , answer: $answer")
+            println("case: ${testCase.first.contentToString()}, ${testCase.second}")
+            println("result: $answer, actual: ${answers[index]}, correct: ${answers[index] == answer}")
             println()
         }
     }
