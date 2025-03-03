@@ -17,7 +17,7 @@ class StackUsingTop<T : Any?>(private val maxSize: Int) : Stack<T> {
     override var top: Int = -1
         private set
     override val size: Int
-        get() = stack.size
+        get() = top + 1
     private val stack: Array<T?> = Array<Any?>(maxSize) {null} as Array<T?>
 
     init {
