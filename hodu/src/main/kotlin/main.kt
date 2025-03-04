@@ -6,6 +6,7 @@ fun main() {
 //    testQueue()
 //    testCircularQueue()
 //    testMinHeap()
+    testMinHeap2()
 //    testMaxHeap()
 //    val solution9093 = Boj9093Solution()
 //    solution9093.runTestCases()
@@ -130,6 +131,47 @@ private fun testMinHeap() {
     for (i in 1..minHeap.size) {
         print("$i[${minHeap.heap[i]}]  ")
     }
+    println()
+}
+
+private fun testMinHeap2() {
+    val minHeap = MinHeap2()
+    println("--- [최소 힙 테스트] ---")
+    println("delete: ${minHeap.delete()}")
+
+    minHeap.insert(3)
+    minHeap.insert(5)
+    minHeap.insert(10)
+    minHeap.insert(2)
+    minHeap.insert(9)
+    println("마지막 노드 번호: ${minHeap.n}")
+    for (i in 1..minHeap.n) {
+        print("$i[${minHeap.heap[i]}]  ")
+    }
+//    println(minHeap.heap.contentToString())
+    println()
+
+    minHeap.insert(15)
+    minHeap.insert(2)
+    minHeap.insert(-3)
+    minHeap.insert(-6)
+    minHeap.insert(0)
+    minHeap.insert(100)
+    println("마지막 노드 번호: ${minHeap.n}")
+    for (i in 1..minHeap.n) {
+        print("$i[${minHeap.heap[i]}]  ")
+    }
+//    println(minHeap.heap.contentToString())
+    println()
+
+    println("delete: ${minHeap.delete()}")
+    println("delete: ${minHeap.delete()}")
+    println("delete: ${minHeap.delete()}")
+    println("마지막 노드 번호: ${minHeap.n}")
+    for (i in 1..minHeap.n) {
+        print("$i[${minHeap.heap[i]}]  ")
+    }
+//    println(minHeap.heap.contentToString())
     println()
 }
 
