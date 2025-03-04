@@ -1,4 +1,5 @@
 import datastructure.*
+import solve.boj.Boj1715Solution
 import solve.boj.Boj2075Solution
 
 fun main() {
@@ -6,13 +7,15 @@ fun main() {
 //    testQueue()
 //    testCircularQueue()
 //    testMinHeap()
-    testMinHeap2()
+//    testMinHeap2()
 //    testMaxHeap()
 //    val solution9093 = Boj9093Solution()
 //    solution9093.runTestCases()
 //    testMaxHeapUsingMutableList()
-    val solution2075 = Boj2075Solution()
-    solution2075.solve()
+//    val solution2075 = Boj2075Solution()
+//    solution2075.solve()
+    val solution1715 = Boj1715Solution()
+    solution1715.solve()
 }
 
 private fun testQueue() {
