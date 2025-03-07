@@ -11,6 +11,8 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    testImplementation(group = "org.junit.jupiter", name = "junit-jupiter", version = "5.10.2")
+    testImplementation(group = "org.assertj", name = "assertj-core", version = "3.27.0")
 }
 
 tasks.test {
