@@ -1,4 +1,4 @@
-package solve.boj
+package solve.boj.boj1138
 
 // 사람들은 자기보다 큰 사람이 왼쪽에 몇 명 있었는지만을 기억
 // N명의 사람이 있고, 사람들의 키는 1부터 N까지 모두 다르다.

@@ -1,4 +1,4 @@
-package solve.boj
+package solve.boj.boj21918
 
 // 1번 ix : i번째 전구를 x로 변경
 // 2번 lr : l번째부터 r번째까지 전구의 상태를 반대로
