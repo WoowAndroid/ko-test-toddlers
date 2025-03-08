@@ -1,7 +1,6 @@
-package solve.boj
+package solve.boj.boj2075
 
 import datastructure.MaxHeap
-import datastructure.MaxHeapUsingMutableList
 
 class Boj2075Solution {
     fun solve() {

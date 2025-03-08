@@ -1,4 +1,4 @@
-package solve.boj
+package solve.boj.boj22860
 
 // 파일 이름이 같은 경우는 동일한 파일이다.
 // 한 폴더 안에는 같은 이름의 파일이 두 개 이상 존재할 수 없다.
@@ -11,6 +11,8 @@ package solve.boj
 // 파일의 종류의 개수 : 같은 파일이 여러개 있을 경우 하나로 계산
 // 파일의 총 개수 : 같은 파일이 있더라도 하나로 계산하지 않는다.
 fun main() {
+    System.`in`.bufferedReader()
+    System.out.bufferedWriter()
     val (folderCounts, fileCounts) = readln().split(" ").map{it.toInt()}
     // map을 쓸까?
     val structure = mutableMapOf<String, MutableList<Pair<Int, String>>>().withDefault { mutableListOf() }

@@ -1,4 +1,4 @@
-package solve.boj
+package solve.boj.boj9093
 
 class Boj9093Solution {
     private val testCases: List<String> =

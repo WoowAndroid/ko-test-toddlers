@@ -1,6 +1,5 @@
 import datastructure.*
-import solve.boj.Boj1715Solution
-import solve.boj.Boj2075Solution
+import solve.boj.boj1715.Boj1715Solution
 
 fun main() {
     println("hello walnut")

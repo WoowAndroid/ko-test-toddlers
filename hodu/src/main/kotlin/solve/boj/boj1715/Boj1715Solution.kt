@@ -1,4 +1,4 @@
-package solve.boj
+package solve.boj.boj1715
 
 import datastructure.MinHeap2
 
