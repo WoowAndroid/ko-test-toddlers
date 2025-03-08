@@ -20,11 +20,16 @@ fun boj1260() {
     // 방문할 수 있는 정점이 여러 개인 경우 -> 정점 번호가 작은 것을 먼저 방문
     graph.map { it.sort() }
 
-    dfs(v, graph)
+    val visit = Array(graph.size) { false }
+
+    // dfs(v, graph)
+    dfsReflection(v, graph, visit)
+    println()
     bfs(v, graph)
 }
 
 // dfs: 스택이나 재귀를 활용해 풀이 가능
+// dfs 풀이1. 스택
 fun dfs(start: Int, graph: Array<MutableList<Int>>) {
     // 각 정점이 "한 번 방문했는지 여부"만 알면 되기 때문에 방문 여부는 1차원 배열 사용
     val visit = Array(graph.size) { false }
@@ -51,6 +56,16 @@ fun dfs(start: Int, graph: Array<MutableList<Int>>) {
     }
 
     println(result.joinToString(" "))
+}
+
+// dfs 풀이2. 재귀
+fun dfsReflection(v: Int, graph: Array<MutableList<Int>>, visit: Array<Boolean>) {
+    visit[v] = true // 현재 정점 방문 처리
+    print("$v ") // // 방문한 정점 출력
+
+    for (nextV in graph[v]) { // 현재 정점의 인접 정점 탐색
+        if (!visit[nextV]) dfsReflection(nextV, graph, visit) // // 방문하지 않은 정점이면 다음 정점으로 이동
+    }
 }
 
 // bfs: 큐를 활용해 풀이 가능
