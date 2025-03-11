@@ -2,7 +2,7 @@ package boj.dp
 
 import kotlin.math.min
 
-// https://github.com/WoowAndroid/ko-test-toddlers/wiki
+// https://www.acmicpc.net/problem/1463
 fun boj1463() {
     val n = readln().toInt()
 
