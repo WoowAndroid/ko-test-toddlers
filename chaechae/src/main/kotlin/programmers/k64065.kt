@@ -7,15 +7,15 @@ fun main() {
             val s1 = s.substring(2, s.length - 2)
             val list = s1.split("},{")
 
-            val result = Array(list.size){ listOf<Int>() }
+            val result = Array(list.size) { listOf<Int>() }
             val answer = mutableSetOf<Int>()
 
-            for(i in list){
-                val temp = i.split(",").map{ it.toInt() }
+            for (i in list) {
+                val temp = i.split(",").map { it.toInt() }
                 result[temp.size - 1] = temp
             }
 
-            for(i in result) {
+            for (i in result) {
                 answer.addAll(i)
             }
 
